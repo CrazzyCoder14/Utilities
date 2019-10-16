@@ -22,4 +22,9 @@ public class IndexController {
 	public String showHomePage(ModelMap model) {
 		return "home";
 	}
+	
+	@RequestMapping(value = "email", method = RequestMethod.GET)
+	public String showEmailPage(ModelMap model) {
+		return "email";
+	}
 }
