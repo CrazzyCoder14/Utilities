@@ -1,62 +1,20 @@
 package com.parse.email.Model;
 
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
-
-@Entity
-@Table(name = "email")
-@EntityListeners(AuditingEntityListener.class)
 public class Email {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long emailid;
-
-	@NotBlank
-	private String to;
-
-	@NotBlank
-	private String from;
-
-	@NotBlank
-	private String subject;
-
-	public Long getEmailid() {
-		return emailid;
+	String emailAddress;
+	String password;
+	public String getEmailAddress() {
+		return emailAddress;
 	}
-
-	public void setEmailid(Long emailid) {
-		this.emailid = emailid;
+	public void setEmailAddress(String emailAddress) {
+		this.emailAddress = emailAddress;
 	}
-
-	public String getTo() {
-		return to;
+	public String getPassword() {
+		return password;
 	}
-
-	public void setTo(String to) {
-		this.to = to;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
-	public String getFrom() {
-		return from;
-	}
-
-	public void setFrom(String from) {
-		this.from = from;
-	}
-
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
+	
 }

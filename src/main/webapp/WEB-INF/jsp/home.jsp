@@ -42,20 +42,24 @@
 	<h2>Utility Wizard</h2>
 	<div class="container">
 		<div>
-			<img src="/images/csv.png">
+			<a href="/csv"><img src="/images/csv.png">
 			<h5 style="text-align:center">CSV</h5>
+			</a>
 		</div>
 		<div class="incontainer">
-			<img src="/images/json.png">
+			<a href="/json"><img src="/images/json.png">
 			<h5 style="text-align:center">JSON</h5>
+			</a>
 		</div>
 		<div>
-			<img src="/images/xml.png">
+			<a href="/xml"><img src="/images/xml.png">
 			<h5 style="text-align:center">XML</h5>
+			</a>
 		</div>
 		<div>
-			<img src="/images/email.png">
+			<a href="/email"><img src="/images/email.png">
 			<h5 style="text-align:center">EMAIL</h5>
+			</a>
 		</div>
 	</div>
 </body>

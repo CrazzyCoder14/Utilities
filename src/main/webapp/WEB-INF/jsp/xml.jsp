@@ -37,12 +37,12 @@
 	<div class="container">	
 		<div class="incontainer">
 			<form method="post" id="loginform">
-				<label for="emailaddress">Email Address</label> <input type="text"
-					id="emailaddress" name="emailaddress" required>
-				<label for="password">Password</label> <input type="password"
-					id="password" name="password" required>
+				<label for="filename">File Name</label> <input type="text"
+					id="filename" name="filename" required>
+				<label for="inputfile">File to upload</label> <input type="file"
+					id="inputfile" name="inputfile" required>	
 				<input type="reset" value="Reset" id="reset"> <input
-					type="button" value="Submit" id="email_submit">
+					type="button" value="Submit" id="xml_submit">
 			</form>
 		</div>
 	</div>
