@@ -1,4 +1,4 @@
-$("#login_submit").click(function(){
+$("#email_submit").click(function() {
 	$('#failure_p').hide();
 	$('#success_p').hide();
 	var isvalidate = true;
@@ -6,11 +6,11 @@ $("#login_submit").click(function(){
 		$.ajax({
 			type : 'POST',
 			contentType : "application/json",
-			url : "/extractEmail",
+			url : "/api/extractemail",
 			data : formToJSON(),
 			statusCode : {
 				200 : function() {
-					getUserID();
+					console.log("Success");
 				},
 				201 : function() {
 					console.log("error");
@@ -22,33 +22,17 @@ $("#login_submit").click(function(){
 });
 
 function formToJSON() {
-	var username = document.getElementById("emailaddress").value;
+	var emailaddress = document.getElementById("emailaddress").value;
 	var password = document.getElementById("password").value;
 
 	var eqn = JSON.stringify({
-		"emailaddress" : emailaddress,
+		"emailAddress" : emailaddress,
 		"password" : password
 
 	});
+	console.log(emailaddress);
+	console.log(password);
+	console.log(eqn);
 	return eqn;
+	
 }
-
-function getUserID(){
-	var username = document.getElementById("username").value;
-	$.ajax({
-		type : 'GET',
-		contentType : "application/json",
-		url : "http://localhost:9090/getuserdetails/"+username,
-		success : function(data) {
-			var userId = data[0].userId;
-			console.log(userId);
-			sessionStorage.setItem("userId",userId);
-			window.location.href = "/dashboard";
-		},
-		error : function(data) {
-		}
-		
-	});
-}
-
-
