@@ -37,7 +37,7 @@ public class APIServiceImpl implements APIService {
 		FileWriter writer = new FileWriter(file);
 		String str = "input {\n" + 
 				"	file {\n" + 
-				"		path => \"/usr/share/input/"+name+".csv\"\n" + 
+				"		path => \"/usr/share/input/*.csv\"\n" + 
 				"		sincedb_path => \"/dev/null\"\n" + 
 				"		start_position => \"beginning\"\n" + 
 				"	}\n" + 
@@ -45,11 +45,7 @@ public class APIServiceImpl implements APIService {
 				"\n" + 
 				"filter {\n" + 
 				"    csv {\n" + 
-				"        columns => [\n" + 
-				"            \"Id\",\n" + 
-				"            \"Name\",\n" + 
-				"	    \"Subject\"\n" + 
-				"        ]\n" + 
+				"        autodetect_column_names => true\n" + 
 				"    }\n" + 
 				"}\n" + 
 				"\n" + 
@@ -58,7 +54,6 @@ public class APIServiceImpl implements APIService {
 				"    hosts => \"elasticsearch:9200\"\n" + 
 				"    index => \"sample\"\n" + 
 				"    document_type => \"temp\"\n" + 
-				"    document_id => \"%{Id}\" \n" + 
 				"  }  \n" + 
 				"}";
 		writer.write(str);
