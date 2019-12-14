@@ -35,12 +35,11 @@ public class MailExtract {
 			// account
 			Flags seen = new Flags(Flags.Flag.SEEN);
 			FlagTerm unseenFlagTerm = new FlagTerm(seen, false);
-//            return emailFolder.search(unseenFlagTerm);
-//            FlagTerm fromMail = new FlagTerm(new InternetAddress("padma.joseph@iiitb.ac.in"),true);
 
 			if (!folder.isOpen())
 				folder.open(Folder.READ_WRITE);
 //            Message[] messages = folder.getMessages();
+			//Take this from GUI
 			SearchTerm searchterm1 = new FromTerm(new InternetAddress("himavyas14@gmail.com"));
 			SearchTerm searchterm2 = new AndTerm(searchterm1, unseenFlagTerm);
 //            Message[] messages = folder.search(unseenFlagTerm);
@@ -65,6 +64,7 @@ public class MailExtract {
 						if (Part.ATTACHMENT.equalsIgnoreCase(part.getDisposition())) {
 							// this part is attachment
 							// code to save attachment...
+							// Change the path or take it from GUI
 							String destFilePath = "/home/hima/Downloads/ELK_NEW/ELK/input/" + part.getFileName();
 							File f = new File(destFilePath);
 							FileOutputStream output = new FileOutputStream(f);
