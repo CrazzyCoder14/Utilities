@@ -1,3 +1,6 @@
+/**********************************
+* This class contains APIs
+********************************/
 package com.parse.email.Controller;
 
 import java.io.IOException;
